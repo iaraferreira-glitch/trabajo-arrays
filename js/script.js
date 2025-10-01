@@ -37,7 +37,9 @@ function showList(array) {
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
-
-
-
+  const soloStrings = strangeArray.filter(
+    (element) => typeof element === "string"
+  );
+  soloStrings.sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
+  showList(soloStrings);
 });
